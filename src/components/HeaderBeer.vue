@@ -1,9 +1,9 @@
 <template>
   <nav class="navbar fixed-top navbar-light bg-florinian mhHeader">
-      <div class="col-3 plButton d-flex justify-content-start">
+      <div class="col-4 plButton d-flex justify-content-start">
         <GoBack />
       </div>
-      <div class="col-9">
+      <div class="col-8">
         <h5 class="text-white m-0">{{beerName}}</h5>
       </div>
   </nav>
