@@ -31,8 +31,7 @@
 }
 
 .mhHeader {
-    height: 56px;
-    max-height: 56px;
+    padding: 8px 0;
 }
 
 .bi-person-circle {
@@ -119,6 +118,8 @@
 .cardFood {
     width: 18rem;
     padding: 0;
+    border: 0.25px solid #2a2a2a;
+    margin: 0 6px;
 }
 
 .marginsContainer {

@@ -21,21 +21,37 @@
       <p>{{ beerLocal.description }}</p>
     </div>
     <!-- Three data types -->
-    <div class="row mt-2 marginsContainer workSans">
-      <div class="col-4 border-0 rounded bg-coral">
-        <div><i class="bi bi-calendar-check"></i></div>
-        <div><b>First brewed</b></div>
-        <div>{{ beerLocal.first_brewed }}</div>
+    <div v-if="beerLocal.ibu != null">
+      <div class="row mt-2 marginsContainer workSans">
+        <div class="col-4 border-0 rounded bg-coral">
+          <div><i class="bi bi-calendar-check"></i></div>
+          <div><b>First brewed</b></div>
+          <div>{{ beerLocal.first_brewed }}</div>
+        </div>
+        <div class="col-4 border-0 rounded bg-abv">
+          <div><b>ABV</b></div>
+          <div>{{ beerLocal.abv }}</div>
+          <div><i class="bi bi-info-circle"></i></div>
+        </div>
+        <div class="col-4 border-0 rounded bg-ibu">
+          <div><b>IBU</b></div>
+          <div>{{ beerLocal.ibu }}</div>
+          <div><i class="bi bi-info-circle"></i></div>
+        </div>
       </div>
-      <div class="col-4 border-0 rounded bg-abv">
-        <div><b>ABV</b></div>
-        <div>{{ beerLocal.abv }}</div>
-        <div><i class="bi bi-info-circle"></i></div>
-      </div>
-      <div class="col-4 border-0 rounded bg-ibu">
-        <div><b>IBU</b></div>
-        <div>{{ beerLocal.ibu }}</div>
-        <div><i class="bi bi-info-circle"></i></div>
+    </div>
+    <div v-else-if="beerLocal.ibu == null">
+      <div class="row mt-2 marginsContainer workSans">
+        <div class="col-6 border-0 rounded bg-coral">
+          <div><i class="bi bi-calendar-check"></i></div>
+          <div><b>First brewed</b></div>
+          <div>{{ beerLocal.first_brewed }}</div>
+        </div>
+        <div class="col-6 border-0 rounded bg-abv">
+          <div><b>ABV</b></div>
+          <div>{{ beerLocal.abv }}</div>
+          <div><i class="bi bi-info-circle"></i></div>
+        </div>
       </div>
     </div>
     <!-- Other data Accordion -->
@@ -68,15 +84,9 @@
               target_og:
               {{ beerLocal.target_og }}
             </div>
-            <div class="mb-1">
-              ebc: {{ beerLocal.ebc }}
-            </div>
-            <div class="mb-1">
-              srm: {{ beerLocal.srm }}
-            </div>
-            <div class="mb-1">
-              ph: {{ beerLocal.ph }}
-            </div>
+            <div class="mb-1">ebc: {{ beerLocal.ebc }}</div>
+            <div class="mb-1">srm: {{ beerLocal.srm }}</div>
+            <div class="mb-1">ph: {{ beerLocal.ph }}</div>
             <div>
               attenuation_level:
               {{ beerLocal.attenuation_level }}
@@ -124,7 +134,10 @@
       </div>
       <!-- Twist, only shown if does not return null -->
       <div v-if="beerLocal.method.twist == null"></div>
-      <div v-else-if="beerLocal.method.twist != null" class="workSans mt-2 border-0 bg-2a">
+      <div
+        v-else-if="beerLocal.method.twist != null"
+        class="workSans mt-2 border-0 bg-2a"
+      >
         twist: {{ beerLocal.method.twist }}
       </div>
     </div>
@@ -159,7 +172,9 @@
           <div class="col-5">
             {{ hopsObject.amount.value }} {{ hopsObject.amount.unit }}
             <br />
-            <div class="workSansL2">{{ hopsObject.add }}, {{ hopsObject.attribute }}</div>
+            <div class="workSansL2">
+              {{ hopsObject.add }}, {{ hopsObject.attribute }}
+            </div>
           </div>
         </div>
       </div>
