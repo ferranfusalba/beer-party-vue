@@ -1,11 +1,13 @@
 <template>
   <HeaderList />
   <div class="container">
+    <FadeInDown>
     <div class="mb-4 introMsg">
       Welcome to Deale's party beer guide.
       <br>
       Choose your favourite one and join us!
     </div>
+    </FadeInDown>
     <h1 class="text-center mb-3 titleBeersPage">List of beers</h1>
     <div v-for="(beer, index) in beerList" :key="index">
       <router-link :to="{ name: 'Beer', params: { id: beer.id } }" class="tdn">
@@ -58,7 +60,7 @@ export default {
   components: {
     HeaderList,
     Tag,
-    Footer
+    Footer,
   },
   data() {
     return {

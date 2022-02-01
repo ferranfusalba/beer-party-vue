@@ -1,6 +1,6 @@
 <template>
   <div>
-    <router-view class="animate__animated animate__zoomIn pagina" />
+    <router-view />
   </div>
 </template>
 

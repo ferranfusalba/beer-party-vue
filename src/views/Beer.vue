@@ -31,12 +31,16 @@
         <div class="col-4 border-0 rounded bg-abv">
           <div><b>ABV</b></div>
           <div>{{ beerLocal.abv }}</div>
-          <div><i class="bi bi-info-circle"></i></div>
+          <Popper content="ABV, or alcohol by volume, is the standard measurement, used worldwide, to assess the strength of a particular beer. The higher the ABV, the more alcohol that beer contains.">
+            <button class="btn btn-sm"><i class="bi bi-info-circle"></i></button>
+          </Popper>
         </div>
         <div class="col-4 border-0 rounded bg-ibu">
           <div><b>IBU</b></div>
           <div>{{ beerLocal.ibu }}</div>
-          <div><i class="bi bi-info-circle"></i></div>
+          <Popper content="IBU stands for International Bitterness Unit. The IBU scale measures the bitterness leves in beer, based on the amount of hops added.">
+            <button class="btn btn-sm"><i class="bi bi-info-circle"></i></button>
+          </Popper>
         </div>
       </div>
     </div>
@@ -134,11 +138,10 @@
       </div>
       <!-- Twist, only shown if does not return null -->
       <div v-if="beerLocal.method.twist == null"></div>
-      <div
-        v-else-if="beerLocal.method.twist != null"
-        class="workSans mt-2 border-0 bg-2a"
-      >
-        twist: {{ beerLocal.method.twist }}
+      <div v-else-if="beerLocal.method.twist != null">
+        <div class="workSans mt-2 border-0 bg-twist">
+          twist: {{ beerLocal.method.twist }}
+        </div>
       </div>
     </div>
     <!-- Ingredients -->
@@ -228,6 +231,7 @@
 import HeaderBeer from "@/components/HeaderBeer.vue";
 import Footer from "@/components/Footer.vue";
 import Tag from "@/components/Tag.vue";
+import Popper from "vue3-popper";
 
 export default {
   name: "Beer",
@@ -235,6 +239,7 @@ export default {
     HeaderBeer,
     Footer,
     Tag,
+    Popper,
   },
   data() {
     return {
