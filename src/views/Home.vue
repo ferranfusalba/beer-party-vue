@@ -6,9 +6,6 @@
       <br>
       Choose your favourite one and join us!
     </div>
-    <div class="mt-4">
-      <router-link to="/beers"><button class="btn btn-primary">List of beers</button></router-link>
-    </div>
   </div>
 </template>
 

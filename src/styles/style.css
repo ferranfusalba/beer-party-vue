@@ -36,7 +36,7 @@
 }
 
 .beerImg {
-    height: 100px;
+    max-height: 100px;
 }
 
 .beerName {
@@ -70,6 +70,13 @@
     padding: 0 10px;
 }
 
+.tagID {
+    background-color: #2a2a2a;
+    color: white;
+    text-decoration: none;
+    padding: 0 10px;
+}
+
 .cardBeer {
     border: 0.25px solid #2a2a2a;
     padding: 0 20px;
@@ -78,4 +85,9 @@
 .titleBeersPage {
     font-family: 'Libre Baskerville', serif;
     font-weight: 900;
+}
+
+.introMsg {
+    color: #2a2a2a;
+    font-family: 'Work Sans', sans-serif;
 }

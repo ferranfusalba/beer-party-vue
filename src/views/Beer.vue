@@ -4,9 +4,18 @@
     <!-- Image -->
     <img :src="beerLocal.image_url" alt="" srcset="" style="height: 200px" />
     <!-- Name -->
-    <h1 class="text-center mt-2">{{ beerLocal.id }} - {{ beerLocal.name }}</h1>
+    <h1 class="text-center beerName mt-3">{{ beerLocal.name }}</h1>
+    <!-- ID Tag -->
+    <div class="d-flex flex-row justify-content-center">
+      <Tag
+        class="mt-2"
+        :tagName="'#'"
+        :tagData="beerLocal.id"
+        :tagStyle="'tagID'"
+      />
+    </div>
     <!-- Tagline -->
-    <h5>{{ beerLocal.tagline }}</h5>
+    <h5 class="mt-3 beerTagline">{{ beerLocal.tagline }}</h5>
     <!-- Description -->
     <div class="text-start">
       <small>{{ beerLocal.description }}</small>
@@ -147,11 +156,25 @@
     <!-- Food pairing -->
     <div class="mt-2">
       <h5>Food pairing</h5>
-      <ul class="text-start">
-        <li v-for="item in beerLocal.food_pairing" :key="item">
-          {{ item }}
-        </li>
-      </ul>
+      <!-- Card carousel -->
+      <div
+        class="row flex-row flex-nowrap"
+        style="overflow-x: auto"
+      >
+        <!-- CARD 1 -->
+        <div v-for="item in beerLocal.food_pairing"
+        :key="item" class="card" style="width: 18rem">
+          <img class="card-img-top" src="" alt="Card image cap" />
+          <div class="card-body">
+            <h5 class="card-title">{{ item }}</h5>
+            <p class="card-text">
+              Some quick example text to build on the card title and make up the
+              bulk of the card's content.
+            </p>
+            <a href="#" class="btn btn-primary">Go somewhere</a>
+          </div>
+        </div>
+      </div>
     </div>
     <!-- Brewers tips -->
     <div class="mt-2 mb-4">
@@ -161,8 +184,8 @@
           <i class="bi bi-person-circle"></i>
         </div>
         <div class="col-10 text-start">
-          <p>{{beerLocal.brewers_tips}}</p>
-          <small>{{beerLocal.contributed_by}}</small>
+          <p>{{ beerLocal.brewers_tips }}</p>
+          <small>{{ beerLocal.contributed_by }}</small>
         </div>
       </div>
     </div>
@@ -173,12 +196,14 @@
 <script>
 import HeaderBeer from "@/components/HeaderBeer.vue";
 import Footer from "@/components/Footer.vue";
+import Tag from "@/components/Tag.vue";
 
 export default {
   name: "Beer",
   components: {
     HeaderBeer,
-    Footer
+    Footer,
+    Tag,
   },
   data() {
     return {

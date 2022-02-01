@@ -1,6 +1,6 @@
 <template>
   <div :class="tagStyle" class="tagCommonStyle">
-    <small>{{tagName}} {{tagData}}</small>
+    <small>{{tagName}}{{tagData}}</small>
   </div>
 </template>
 
