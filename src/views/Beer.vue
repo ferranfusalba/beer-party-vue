@@ -166,16 +166,19 @@
         </div>
       </div>
     </div>
+    <Footer />
   </div>
 </template>
 
 <script>
 import HeaderBeer from "@/components/HeaderBeer.vue";
+import Footer from "@/components/Footer.vue";
 
 export default {
   name: "Beer",
   components: {
     HeaderBeer,
+    Footer
   },
   data() {
     return {

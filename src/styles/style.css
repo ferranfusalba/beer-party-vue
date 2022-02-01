@@ -1,36 +1,81 @@
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
 }
 
 .bg-azure {
-  background-color: #007fff;
+    background-color: #007fff;
 }
 
 .bg-florinian {
-  background-color: #D7A100;
+    background-color: #D7A100;
 }
 
 .tdn {
-  text-decoration: none;
+    text-decoration: none;
 }
 
 .container {
-  margin-top: 5rem;
+    margin-top: 5rem;
 }
 
 .plButton {
-  padding-left: 12px;
+    padding-left: 12px;
 }
 
 .mhHeader {
-  height: 56px;
-  max-height: 56px;
+    height: 56px;
+    max-height: 56px;
 }
 
 .bi-person-circle {
-  font-size: 30px;
+    font-size: 30px;
+}
+
+.beerImg {
+    height: 100px;
+}
+
+.beerName {
+    color: #000000;
+    font-family: 'Libre Baskerville', serif;
+    font-weight: 700;
+}
+
+.beerTagline {
+    color: rgb(173, 127, 0);
+    font-family: 'Work Sans', sans-serif;
+}
+
+.tagCommonStyle {
+    border: 1px solid;
+    border-radius: 20px;
+}
+
+.tagADV {
+    background-color: rgb(106, 183, 255);
+    color: white;
+    text-decoration: none;
+    margin-right: 10px;
+    padding: 0 10px;
+}
+
+.tagIBU {
+    background-color: rgb(248, 177, 110);
+    color: white;
+    text-decoration: none;
+    padding: 0 10px;
+}
+
+.cardBeer {
+    border: 0.25px solid #2a2a2a;
+    padding: 0 20px;
+}
+
+.titleBeersPage {
+    font-family: 'Libre Baskerville', serif;
+    font-weight: 900;
 }
