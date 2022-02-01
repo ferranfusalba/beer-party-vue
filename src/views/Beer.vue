@@ -17,28 +17,29 @@
     <!-- Tagline -->
     <h5 class="mt-3 beerTagline">{{ beerLocal.tagline }}</h5>
     <!-- Description -->
-    <div class="text-start">
-      <small>{{ beerLocal.description }}</small>
+    <div class="mt-3 text-start descriptionSmall">
+      <p>{{ beerLocal.description }}</p>
     </div>
     <!-- Three data types -->
-    <div class="row mt-2">
-      <div class="col-4 border rounded">
-        <div>First brewed</div>
+    <div class="row mt-2 marginsContainer workSans">
+      <div class="col-4 border-0 rounded bg-coral">
+        <div><i class="bi bi-calendar-check"></i></div>
+        <div><b>First brewed</b></div>
         <div>{{ beerLocal.first_brewed }}</div>
       </div>
-      <div class="col-4 border rounded">
-        <div>ABV</div>
+      <div class="col-4 border-0 rounded bg-abv">
+        <div><b>ABV</b></div>
         <div>{{ beerLocal.abv }}</div>
         <div><i class="bi bi-info-circle"></i></div>
       </div>
-      <div class="col-4 border rounded">
-        <div>IBU</div>
+      <div class="col-4 border-0 rounded bg-ibu">
+        <div><b>IBU</b></div>
         <div>{{ beerLocal.ibu }}</div>
         <div><i class="bi bi-info-circle"></i></div>
       </div>
     </div>
     <!-- Other data Accordion -->
-    <div class="accordion mt-2" id="accordionExample">
+    <div class="accordion mt-3 workSans" id="accordionExample">
       <div class="accordion-item">
         <h2 class="accordion-header" id="headingThree">
           <button
@@ -85,23 +86,23 @@
       </div>
     </div>
     <!-- Volume & Boil volume -->
-    <div class="row mt-2">
-      <div class="col-6 border rounded">
-        <div>Volume</div>
+    <div class="row mt-3 workSans">
+      <div class="col-6 border-0">
+        <div><b>Volume</b></div>
         <div>{{ beerLocal.volume.value }} {{ beerLocal.volume.unit }}</div>
       </div>
-      <div class="col-6 border rounded">
-        <div>Boil volume</div>
+      <div class="col-6 border-0">
+        <div><b>Boil volume</b></div>
         <div>
           {{ beerLocal.boil_volume.value }} {{ beerLocal.boil_volume.unit }}
         </div>
       </div>
     </div>
     <!-- Method -->
-    <div class="row mt-2">
-      <h5>Method</h5>
+    <div class="row mt-4">
+      <h5 class="workSansB">Method</h5>
       <!-- mash_temp -->
-      <div class="col-6">
+      <div class="col-6 workSans">
         <div><b>mash_temp</b></div>
         <div>
           temp: {{ beerLocal.method.mash_temp[0].temp.value }}
@@ -110,7 +111,7 @@
         <div>duration: {{ beerLocal.method.mash_temp[0].duration }}</div>
       </div>
       <!-- fermentation -->
-      <div class="col-6">
+      <div class="col-6 workSans">
         <div><b>fermentation</b></div>
         <div>
           temp: {{ beerLocal.method.fermentation.temp.value }}
@@ -119,52 +120,81 @@
       </div>
       <!-- Twist, only shown if does not return null -->
       <div v-if="beerLocal.method.twist == null"></div>
-      <div v-else-if="beerLocal.method.twist != null">
+      <div v-else-if="beerLocal.method.twist != null" class="workSans">
         twist: {{ beerLocal.method.twist }}
       </div>
     </div>
     <!-- Ingredients -->
-    <div class="mt-2">
-      <h4>Ingredients</h4>
-      <h5>Malt</h5>
+    <div class="mt-4">
+      <h4 class="workSansB">Ingredients</h4>
+      <h5 class="workSansL mt-3 mb-3">Malt</h5>
       <div
         v-for="maltObject in beerLocal.ingredients.malt"
         :key="maltObject"
         class="mb-2"
       >
-        {{ maltObject.name }}
-        <br />
-        {{ maltObject.amount.value }} - {{ maltObject.amount.unit }}
+        <table class="table table-bordered">
+          <tbody>
+            <tr>
+              <th scope="col">{{ maltObject.name }}</th>
+              <th scope="col">
+                {{ maltObject.amount.value }} {{ maltObject.amount.unit }}
+              </th>
+            </tr>
+          </tbody>
+        </table>
       </div>
-      <h5>Hops</h5>
+      <h5 class="workSansL mt-3 mb-3">Hops</h5>
       <div
         v-for="hopsObject in beerLocal.ingredients.hops"
         :key="hopsObject"
         class="mb-2"
       >
-        {{ hopsObject.name }}
-        <br />
-        {{ hopsObject.amount.value }} - {{ hopsObject.amount.unit }}
-        <br />
-        {{ hopsObject.add }}
-        <br />
-        {{ hopsObject.attribute }}
+      <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th scope="col">{{ hopsObject.name }}</th>
+              <th scope="col">
+                {{ hopsObject.amount.value }} - {{ hopsObject.amount.unit }}
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row"></th>
+              <th scope="row">{{ hopsObject.add }}, {{ hopsObject.attribute }}</th>
+            </tr>
+          </tbody>
+        </table>
       </div>
-      <h5>Yeast</h5>
-      {{ beerLocal.ingredients.yeast }}
+      <h5 class="workSansL mt-3 mb-3">Yeast</h5>
+      <table class="table table-bordered">
+          <tbody>
+            <tr>
+              <th scope="col">{{ beerLocal.ingredients.yeast }}</th>
+            </tr>
+          </tbody>
+        </table>
     </div>
     <!-- Food pairing -->
     <div class="mt-2">
       <h5>Food pairing</h5>
       <!-- Card carousel -->
       <div
-        class="row flex-row flex-nowrap foodAlign"
+        class="row flex-row flex-nowrap marginsContainer"
         style="overflow-x: auto"
       >
         <!-- CARD 1 -->
-        <div v-for="item in beerLocal.food_pairing"
-        :key="item" class="card cardFood">
-          <img class="card-img-top" src="@/assets/eiliv-sonas-aceron-ZuIDLSz3XLg-unsplash.jpg" alt="Card image cap" />
+        <div
+          v-for="item in beerLocal.food_pairing"
+          :key="item"
+          class="card cardFood"
+        >
+          <img
+            class="card-img-top"
+            src="@/assets/eiliv-sonas-aceron-ZuIDLSz3XLg-unsplash.jpg"
+            alt="Card image cap"
+          />
           <div class="card-body">
             <h5 class="card-title">{{ item }}</h5>
           </div>

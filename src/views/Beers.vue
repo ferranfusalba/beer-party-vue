@@ -28,7 +28,7 @@
                   <Tag
                     :tagName="'ABV: '"
                     :tagData="beer.abv"
-                    :tagStyle="'tagADV'"
+                    :tagStyle="'tagABV'"
                   />
                   <div v-if="beer.ibu != null">
                     <Tag
