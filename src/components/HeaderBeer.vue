@@ -1,11 +1,13 @@
 <template>
   <nav class="navbar fixed-top navbar-light bg-florinian mhHeader">
-      <div class="col-4 plButton d-flex justify-content-start">
+    <div class="d-flex justify-content-start">
+      <div class="plButton">
         <GoBack />
       </div>
-      <div class="col-8">
-        <h5 class="text-white m-0">{{beerName}}</h5>
+      <div class="plButtonText d-flex align-items-center">
+        <h5 class="text-white text-start m-0">{{beerName}}</h5>
       </div>
+    </div>
   </nav>
 </template>
 
@@ -16,8 +18,8 @@ export default {
   name: "Header",
   props: ["beerName"],
   components: {
-    GoBack
-  }
+    GoBack,
+  },
 };
 </script>
 

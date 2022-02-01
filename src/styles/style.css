@@ -26,6 +26,10 @@
     padding-left: 12px;
 }
 
+.plButtonText {
+    padding-left: 20px;
+}
+
 .mhHeader {
     height: 56px;
     max-height: 56px;
@@ -92,6 +96,11 @@
     background-color: rgb(248, 177, 110, 0.5);
 }
 
+.bg-2a {
+    background-color: rgba(95, 16, 18, 0.8);
+    color: white;
+}
+
 .cardBeer {
     border: 0.25px solid #2a2a2a;
     padding: 0 20px;
@@ -134,4 +143,9 @@
 .workSansL {
     font-family: 'Work Sans', sans-serif;
     font-weight: 400;
+}
+
+.workSansL2 {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 200;
 }

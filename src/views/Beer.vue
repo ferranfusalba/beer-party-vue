@@ -61,24 +61,24 @@
         >
           <div class="accordion-body text-start">
             <div class="mb-1">
-              <i class="bi bi-info-circle"></i> target_fg:
+              target_fg:
               {{ beerLocal.target_fg }}
             </div>
             <div class="mb-1">
-              <i class="bi bi-info-circle"></i> target_og:
+              target_og:
               {{ beerLocal.target_og }}
             </div>
             <div class="mb-1">
-              <i class="bi bi-info-circle"></i> ebc: {{ beerLocal.ebc }}
+              ebc: {{ beerLocal.ebc }}
             </div>
             <div class="mb-1">
-              <i class="bi bi-info-circle"></i> srm: {{ beerLocal.srm }}
+              srm: {{ beerLocal.srm }}
             </div>
             <div class="mb-1">
-              <i class="bi bi-info-circle"></i> ph: {{ beerLocal.ph }}
+              ph: {{ beerLocal.ph }}
             </div>
             <div>
-              <i class="bi bi-info-circle"></i> attenuation_level:
+              attenuation_level:
               {{ beerLocal.attenuation_level }}
             </div>
           </div>
@@ -108,7 +108,11 @@
           temp: {{ beerLocal.method.mash_temp[0].temp.value }}
           {{ beerLocal.method.mash_temp[0].temp.unit }}
         </div>
-        <div>duration: {{ beerLocal.method.mash_temp[0].duration }}</div>
+        <!-- Duration, only shown if does not return null -->
+        <div v-if="beerLocal.method.mash_temp[0].duration == null"></div>
+        <div v-else-if="beerLocal.method.mash_temp[0].duration != null">
+          <div>duration: {{ beerLocal.method.mash_temp[0].duration }}</div>
+        </div>
       </div>
       <!-- fermentation -->
       <div class="col-6 workSans">
@@ -120,7 +124,7 @@
       </div>
       <!-- Twist, only shown if does not return null -->
       <div v-if="beerLocal.method.twist == null"></div>
-      <div v-else-if="beerLocal.method.twist != null" class="workSans">
+      <div v-else-if="beerLocal.method.twist != null" class="workSans mt-2 border-0 bg-2a">
         twist: {{ beerLocal.method.twist }}
       </div>
     </div>
@@ -133,16 +137,14 @@
         :key="maltObject"
         class="mb-2"
       >
-        <table class="table table-bordered">
-          <tbody>
-            <tr>
-              <th scope="col">{{ maltObject.name }}</th>
-              <th scope="col">
-                {{ maltObject.amount.value }} {{ maltObject.amount.unit }}
-              </th>
-            </tr>
-          </tbody>
-        </table>
+        <div class="row text-start workSans marginsContainer">
+          <div class="col-7">
+            <b>{{ maltObject.name }}</b>
+          </div>
+          <div class="col-5">
+            {{ maltObject.amount.value }} {{ maltObject.amount.unit }}
+          </div>
+        </div>
       </div>
       <h5 class="workSansL mt-3 mb-3">Hops</h5>
       <div
@@ -150,35 +152,25 @@
         :key="hopsObject"
         class="mb-2"
       >
-      <table class="table table-bordered">
-          <thead>
-            <tr>
-              <th scope="col">{{ hopsObject.name }}</th>
-              <th scope="col">
-                {{ hopsObject.amount.value }} - {{ hopsObject.amount.unit }}
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th scope="row"></th>
-              <th scope="row">{{ hopsObject.add }}, {{ hopsObject.attribute }}</th>
-            </tr>
-          </tbody>
-        </table>
+        <div class="row text-start workSans marginsContainer">
+          <div class="col-7">
+            <b>{{ hopsObject.name }}</b>
+          </div>
+          <div class="col-5">
+            {{ hopsObject.amount.value }} {{ hopsObject.amount.unit }}
+            <br />
+            <div class="workSansL2">{{ hopsObject.add }}, {{ hopsObject.attribute }}</div>
+          </div>
+        </div>
       </div>
       <h5 class="workSansL mt-3 mb-3">Yeast</h5>
-      <table class="table table-bordered">
-          <tbody>
-            <tr>
-              <th scope="col">{{ beerLocal.ingredients.yeast }}</th>
-            </tr>
-          </tbody>
-        </table>
+      <div class="text-center workSans">
+        {{ beerLocal.ingredients.yeast }}
+      </div>
     </div>
     <!-- Food pairing -->
     <div class="mt-2">
-      <h5>Food pairing</h5>
+      <h5 class="workSansB mt-4 mb-4">Food pairing</h5>
       <!-- Card carousel -->
       <div
         class="row flex-row flex-nowrap marginsContainer"
@@ -196,21 +188,21 @@
             alt="Card image cap"
           />
           <div class="card-body">
-            <h5 class="card-title">{{ item }}</h5>
+            <h5 class="card-title beerTagline">{{ item }}</h5>
           </div>
         </div>
       </div>
     </div>
     <!-- Brewers tips -->
     <div class="mt-2 mb-4">
-      <h5>Brewers tips</h5>
+      <h5 class="workSansB mt-4 mb-4">Brewers tips</h5>
       <div class="row">
         <div class="col-2">
           <i class="bi bi-person-circle"></i>
         </div>
-        <div class="col-10 text-start">
+        <div class="col-10 text-start descriptionSmall">
           <p>{{ beerLocal.brewers_tips }}</p>
-          <small>{{ beerLocal.contributed_by }}</small>
+          <small class="beerTagline">{{ beerLocal.contributed_by }}</small>
         </div>
       </div>
     </div>
