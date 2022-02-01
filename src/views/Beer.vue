@@ -4,7 +4,7 @@
     <!-- Image -->
     <img :src="beerLocal.image_url" alt="" srcset="" style="height: 200px" />
     <!-- Name -->
-    <h1 class="text-center beerName mt-3">{{ beerLocal.name }}</h1>
+    <h1 class="text-center beerName mt-4">{{ beerLocal.name }}</h1>
     <!-- ID Tag -->
     <div class="d-flex flex-row justify-content-center">
       <Tag
@@ -144,7 +144,7 @@
     <!-- Ingredients -->
     <div class="mt-4">
       <h4 class="workSansB">Ingredients</h4>
-      <h5 class="workSansL mt-3 mb-3">Malt</h5>
+      <h5 class="workSansL mt-3 mb-3 bg-malt">Malt</h5>
       <div
         v-for="maltObject in beerLocal.ingredients.malt"
         :key="maltObject"
@@ -159,7 +159,7 @@
           </div>
         </div>
       </div>
-      <h5 class="workSansL mt-3 mb-3">Hops</h5>
+      <h5 class="workSansL mt-3 mb-3 bg-hops">Hops</h5>
       <div
         v-for="hopsObject in beerLocal.ingredients.hops"
         :key="hopsObject"
@@ -178,7 +178,7 @@
           </div>
         </div>
       </div>
-      <h5 class="workSansL mt-3 mb-3">Yeast</h5>
+      <h5 class="workSansL mt-3 mb-3 bg-yeast">Yeast</h5>
       <div class="text-center workSans">
         {{ beerLocal.ingredients.yeast }}
       </div>
@@ -191,7 +191,6 @@
         class="row flex-row flex-nowrap marginsContainer"
         style="overflow-x: auto"
       >
-        <!-- CARD 1 -->
         <div
           v-for="item in beerLocal.food_pairing"
           :key="item"

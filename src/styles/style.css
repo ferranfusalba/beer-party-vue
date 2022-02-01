@@ -14,6 +14,22 @@
     background-color: #D7A100;
 }
 
+.bg-malt {
+    background-color: rgb(192, 133, 110);
+    color: white;
+    border-radius: 20px;
+}
+
+.bg-hops {
+    background-color: rgb(190, 255, 174);
+    border-radius: 20px;
+}
+
+.bg-yeast {
+    background-color: rgb(253, 239, 158);
+    border-radius: 20px;
+}
+
 .tdn {
     text-decoration: none;
 }
