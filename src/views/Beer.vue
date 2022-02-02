@@ -8,7 +8,7 @@
     <!-- ID Tag -->
     <div class="d-flex flex-row justify-content-center">
       <Tag
-        class="mt-2"
+        class="mt-2 idTag"
         :tagName="'#'"
         :tagData="beerLocal.id"
         :tagStyle="'tagID'"
@@ -197,7 +197,7 @@
         <div
           v-for="item in beerLocal.food_pairing"
           :key="item"
-          class="card cardFood"
+          class="card cardFood mb-3"
         >
           <img
             class="card-img-top"

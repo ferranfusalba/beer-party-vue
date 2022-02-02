@@ -1,5 +1,5 @@
 <template>
-    <button class="btn btn-sm bg-2a workSans" @click="previous">{{msgButton}}</button>
+    <button class="btn btn-sm bg-2a workSans btnBack" @click="previous">{{msgButton}}</button>
 </template>
 
 <script>

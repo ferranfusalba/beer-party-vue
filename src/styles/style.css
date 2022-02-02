@@ -123,6 +123,20 @@
     color: white;
 }
 
+.btnBack:hover {
+    color: white;
+}
+
+.idTag {
+    cursor: default;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
 .cardBeer {
     border: 0.25px solid #2a2a2a;
     padding: 0 20px;
