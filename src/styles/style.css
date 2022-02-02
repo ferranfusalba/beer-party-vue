@@ -6,6 +6,34 @@
     color: #2c3e50;
 }
 
+@font-face {
+    font-family: "Libre Baskerville Bold";
+    src: url(../fonts/Libre_Baskerville/LibreBaskerville-Bold.ttf)
+}
+
+@font-face {
+    font-family: "Work Sans";
+    src: url(../fonts/Work_Sans/static/WorkSans-Regular.ttf);
+}
+
+@font-face {
+    font-family: "Work Sans";
+    font-weight: 200;
+    src: url(../fonts/Work_Sans/static/WorkSans-ExtraLight.ttf);
+}
+
+@font-face {
+    font-family: "Work Sans";
+    font-weight: 400;
+    src: url(../fonts/Work_Sans/static/WorkSans-Regular.ttf);
+}
+
+@font-face {
+    font-family: "Work Sans";
+    font-weight: 700;
+    src: url(../fonts/Work_Sans/static/WorkSans-Bold.ttf);
+}
+
 .bg-azure {
     background-color: #007fff;
 }
@@ -67,8 +95,7 @@
 
 .beerName {
     color: #000000;
-    font-family: 'Libre Baskerville', serif;
-    font-weight: 700;
+    font-family: 'Libre Baskerville Bold', serif;
 }
 
 .beerTagline {
@@ -143,7 +170,7 @@
 }
 
 .titleBeersPage {
-    font-family: 'Libre Baskerville', serif;
+    font-family: 'Libre Baskerville Bold', serif;
     font-weight: 900;
 }
 
