@@ -117,22 +117,22 @@
       <h5 class="workSansB">Method</h5>
       <!-- mash_temp -->
       <div class="col-6 workSans">
-        <div><b>mash_temp</b></div>
+        <div><b>Mash temp</b></div>
         <div>
-          temp: {{ beerLocal.method.mash_temp[0].temp.value }}
+          T: {{ beerLocal.method.mash_temp[0].temp.value }}
           {{ beerLocal.method.mash_temp[0].temp.unit }}
         </div>
         <!-- Duration, only shown if does not return null -->
         <div v-if="beerLocal.method.mash_temp[0].duration == null"></div>
         <div v-else-if="beerLocal.method.mash_temp[0].duration != null">
-          <div>duration: {{ beerLocal.method.mash_temp[0].duration }}</div>
+          <div>Duration: {{ beerLocal.method.mash_temp[0].duration }}</div>
         </div>
       </div>
       <!-- fermentation -->
       <div class="col-6 workSans">
-        <div><b>fermentation</b></div>
+        <div><b>Fermentation</b></div>
         <div>
-          temp: {{ beerLocal.method.fermentation.temp.value }}
+          T: {{ beerLocal.method.fermentation.temp.value }}
           {{ beerLocal.method.fermentation.temp.unit }}
         </div>
       </div>
@@ -197,7 +197,7 @@
         <div
           v-for="item in beerLocal.food_pairing"
           :key="item"
-          class="card cardFood mb-3"
+          class="card cardFood mb-3 mr-3"
         >
           <img
             class="card-img-top"
