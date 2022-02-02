@@ -2,6 +2,8 @@ import HeaderBeer from "@/components/HeaderBeer.vue";
 import Footer from "@/components/Footer.vue";
 import Tag from "@/components/Tag.vue";
 import Popper from "vue3-popper";
+import Volume from "@/components/Volume.vue";
+import Method from "@/components/Method.vue";
 
 export default {
     name: "Beer",
@@ -10,6 +12,8 @@ export default {
         Footer,
         Tag,
         Popper,
+        Volume,
+        Method,
     },
     data() {
         return {

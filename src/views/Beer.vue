@@ -31,15 +31,23 @@
         <div class="col-4 border-0 rounded bg-abv">
           <div><b>ABV</b></div>
           <div>{{ beerLocal.abv }}</div>
-          <Popper content="ABV, or alcohol by volume, is the standard measurement, used worldwide, to assess the strength of a particular beer. The higher the ABV, the more alcohol that beer contains.">
-            <button class="btn btn-sm"><i class="bi bi-info-circle"></i></button>
+          <Popper
+            content="ABV, or alcohol by volume, is the standard measurement, used worldwide, to assess the strength of a particular beer. The higher the ABV, the more alcohol that beer contains."
+          >
+            <button class="btn btn-sm">
+              <i class="bi bi-info-circle"></i>
+            </button>
           </Popper>
         </div>
         <div class="col-4 border-0 rounded bg-ibu">
           <div><b>IBU</b></div>
           <div>{{ beerLocal.ibu }}</div>
-          <Popper content="IBU stands for International Bitterness Unit. The IBU scale measures the bitterness leves in beer, based on the amount of hops added.">
-            <button class="btn btn-sm"><i class="bi bi-info-circle"></i></button>
+          <Popper
+            content="IBU stands for International Bitterness Unit. The IBU scale measures the bitterness leves in beer, based on the amount of hops added."
+          >
+            <button class="btn btn-sm">
+              <i class="bi bi-info-circle"></i>
+            </button>
           </Popper>
         </div>
       </div>
@@ -101,27 +109,27 @@
     </div>
     <!-- Volume & Boil volume -->
     <div class="row mt-3 workSans">
-      <div class="col-6 border-0">
-        <div><b>Volume</b></div>
-        <div>{{ beerLocal.volume.value }} {{ beerLocal.volume.unit }}</div>
-      </div>
-      <div class="col-6 border-0">
-        <div><b>Boil volume</b></div>
-        <div>
-          {{ beerLocal.boil_volume.value }} {{ beerLocal.boil_volume.unit }}
-        </div>
-      </div>
+      <Volume
+        volumeType="Volume"
+        :volumeValue="beerLocal.volume.value"
+        :volumeUnit="beerLocal.volume.unit"
+      />
+      <Volume
+        volumeType="Boil volume"
+        :volumeValue="beerLocal.boil_volume.value"
+        :volumeUnit="beerLocal.boil_volume.unit"
+      />
     </div>
     <!-- Method -->
     <div class="row mt-4">
       <h5 class="workSansB">Method</h5>
       <!-- mash_temp -->
       <div class="col-6 workSans">
-        <div><b>Mash temp</b></div>
-        <div>
-          T: {{ beerLocal.method.mash_temp[0].temp.value }}
-          {{ beerLocal.method.mash_temp[0].temp.unit }}
-        </div>
+        <Method
+          methodType="Mash temp"
+          :methodTempValue="beerLocal.method.mash_temp[0].temp.value"
+          :methodTempUnit="beerLocal.method.mash_temp[0].temp.unit"
+        />
         <!-- Duration, only shown if does not return null -->
         <div v-if="beerLocal.method.mash_temp[0].duration == null"></div>
         <div v-else-if="beerLocal.method.mash_temp[0].duration != null">
@@ -130,11 +138,11 @@
       </div>
       <!-- fermentation -->
       <div class="col-6 workSans">
-        <div><b>Fermentation</b></div>
-        <div>
-          T: {{ beerLocal.method.fermentation.temp.value }}
-          {{ beerLocal.method.fermentation.temp.unit }}
-        </div>
+        <Method
+          methodType="Fermentation"
+          :methodTempValue="beerLocal.method.fermentation.temp.value"
+          :methodTempUnit="beerLocal.method.fermentation.temp.unit"
+        />
       </div>
       <!-- Twist, only shown if does not return null -->
       <div v-if="beerLocal.method.twist == null"></div>
@@ -223,6 +231,7 @@
         </div>
       </div>
     </div>
+    <PrevButton />
     <Footer />
   </div>
 </template>
