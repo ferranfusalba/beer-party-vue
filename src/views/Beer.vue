@@ -2,13 +2,13 @@
   <HeaderBeer :beerName="beerLocal.name" />
   <div class="container">
     <!-- Image -->
-    <img :src="beerLocal.image_url" alt="" srcset="" style="height: 200px" />
+    <img :src="beerLocal.image_url" alt="" srcset="" class="imgCoverBeer" />
     <!-- Name -->
-    <h1 class="text-center beerName mt-4">{{ beerLocal.name }}</h1>
+    <h1 class="beerName mt-4">{{ beerLocal.name }}</h1>
     <!-- ID Tag -->
     <div class="d-flex flex-row justify-content-center">
       <Tag
-        class="mt-2 idTag"
+        class="mt-2"
         :tagName="'#'"
         :tagData="beerLocal.id"
         :tagStyle="'tagID'"
@@ -17,7 +17,7 @@
     <!-- Tagline -->
     <h5 class="mt-3 beerTagline">{{ beerLocal.tagline }}</h5>
     <!-- Description -->
-    <div class="mt-3 text-start descriptionSmall">
+    <div class="mt-3 descriptionSmall">
       <p>{{ beerLocal.description }}</p>
     </div>
     <!-- Three data types -->
@@ -59,25 +59,25 @@
       </div>
     </div>
     <!-- Other data Accordion -->
-    <div class="accordion mt-3 workSans" id="accordionExample">
+    <div class="accordion mt-3 workSans" id="accordionOtherData">
       <div class="accordion-item">
-        <h2 class="accordion-header" id="headingThree">
+        <h2 class="accordion-header" id="headingOtherData">
           <button
             class="accordion-button collapsed"
             type="button"
             data-bs-toggle="collapse"
-            data-bs-target="#collapseThree"
+            data-bs-target="#collapseOtherData"
             aria-expanded="false"
-            aria-controls="collapseThree"
+            aria-controls="collapseOtherData"
           >
             Other data
           </button>
         </h2>
         <div
-          id="collapseThree"
+          id="collapseOtherData"
           class="accordion-collapse collapse"
-          aria-labelledby="headingThree"
-          data-bs-parent="#accordionExample"
+          aria-labelledby="headingOtherData"
+          data-bs-parent="#accordionOtherData"
         >
           <div class="accordion-body text-start">
             <div class="mb-1">
@@ -217,7 +217,7 @@
         <div class="col-2">
           <i class="bi bi-person-circle"></i>
         </div>
-        <div class="col-10 text-start descriptionSmall">
+        <div class="col-10 descriptionSmall">
           <p>{{ beerLocal.brewers_tips }}</p>
           <small class="beerTagline">{{ beerLocal.contributed_by }}</small>
         </div>
@@ -227,64 +227,6 @@
   </div>
 </template>
 
-<script>
-import HeaderBeer from "@/components/HeaderBeer.vue";
-import Footer from "@/components/Footer.vue";
-import Tag from "@/components/Tag.vue";
-import Popper from "vue3-popper";
+<script src="@/scripts/beer.js"></script>
 
-export default {
-  name: "Beer",
-  components: {
-    HeaderBeer,
-    Footer,
-    Tag,
-    Popper,
-  },
-  data() {
-    return {
-      beerLocal: {
-        volume: {},
-        boil_volume: {},
-        method: {
-          mash_temp: [
-            {
-              temp: {},
-            },
-          ],
-          fermentation: {
-            temp: {},
-          },
-          twist: "",
-        },
-        ingredients: {
-          malt: [
-            {
-              name: "",
-              amount: {},
-            },
-          ],
-          hops: [
-            {
-              name: "",
-              amount: {},
-              add: "",
-              attribute: "",
-            },
-          ],
-          yeast: "",
-        },
-        food_pairing: [],
-      },
-    };
-  },
-  mounted() {
-    this.init();
-  },
-  methods: {
-    init() {
-      this.beerLocal = this.$store.state.beers[this.$route.params.id - 1];
-    },
-  },
-};
-</script>
+<style src="@/styles/style.css"></style>

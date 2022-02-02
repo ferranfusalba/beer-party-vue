@@ -1,10 +1,14 @@
+/* App General */
+
 #app {
-    font-family: Avenir, Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
     color: #2c3e50;
 }
+
+
+/* Fonts */
 
 @font-face {
     font-family: "Libre Baskerville Bold";
@@ -33,6 +37,9 @@
     font-weight: 700;
     src: url(../fonts/Work_Sans/static/WorkSans-Bold.ttf);
 }
+
+
+/* Backgrounds */
 
 .bg-azure {
     background-color: #007fff;
@@ -65,6 +72,29 @@
     border-radius: 20px;
 }
 
+.bg-coral {
+    padding: 10px 0;
+    background-color: rgb(255, 173, 143, 0.5);
+}
+
+.bg-abv {
+    padding: 10px 0;
+    background-color: rgb(106, 183, 255, 0.5);
+}
+
+.bg-ibu {
+    padding: 10px 0;
+    background-color: rgb(248, 177, 110, 0.5);
+}
+
+.bg-2a {
+    background-color: rgba(95, 16, 18, 0.8);
+    color: white;
+}
+
+
+/* more general stuff: text-decoration: none, container modification */
+
 .tdn {
     text-decoration: none;
 }
@@ -72,6 +102,14 @@
 .container {
     margin-top: 5rem;
 }
+
+.marginsContainer {
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+
+/* header: paddings, margins, button component */
 
 .plButton {
     padding-left: 12px;
@@ -85,23 +123,12 @@
     padding: 8px 0;
 }
 
-.bi-person-circle {
-    font-size: 30px;
+.btnBack:hover {
+    color: white;
 }
 
-.beerImg {
-    max-height: 100px;
-}
 
-.beerName {
-    color: #000000;
-    font-family: 'Libre Baskerville Bold', serif;
-}
-
-.beerTagline {
-    color: rgb(173, 127, 0);
-    font-family: 'Work Sans', sans-serif;
-}
+/* tags */
 
 .tagCommonStyle {
     border: 1px solid;
@@ -128,33 +155,6 @@
     color: white;
     text-decoration: none;
     padding: 0 10px;
-}
-
-.bg-coral {
-    padding: 10px 0;
-    background-color: rgb(255, 173, 143, 0.5);
-}
-
-.bg-abv {
-    padding: 10px 0;
-    background-color: rgb(106, 183, 255, 0.5);
-}
-
-.bg-ibu {
-    padding: 10px 0;
-    background-color: rgb(248, 177, 110, 0.5);
-}
-
-.bg-2a {
-    background-color: rgba(95, 16, 18, 0.8);
-    color: white;
-}
-
-.btnBack:hover {
-    color: white;
-}
-
-.idTag {
     cursor: default;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
@@ -162,6 +162,41 @@
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+}
+
+
+/* icons, images */
+
+.bi-person-circle {
+    font-size: 30px;
+}
+
+.beerImg {
+    max-height: 100px;
+}
+
+
+/* various beer components */
+
+.imgCoverBeer {
+    height: 200px;
+}
+
+.beerName {
+    color: #000000;
+    font-family: 'Libre Baskerville Bold', serif;
+    text-align: center;
+}
+
+.beerTagline {
+    color: rgb(173, 127, 0);
+    font-family: 'Work Sans', sans-serif;
+}
+
+.descriptionSmall {
+    font-family: 'Work Sans', sans-serif;
+    font-size: 14px;
+    text-align: start;
 }
 
 .cardBeer {
@@ -186,15 +221,8 @@
     margin: 0 6px;
 }
 
-.marginsContainer {
-    padding-left: 12px;
-    padding-right: 12px;
-}
 
-.descriptionSmall {
-    font-family: 'Work Sans', sans-serif;
-    font-size: 14px;
-}
+/* fonts */
 
 .workSans {
     font-family: 'Work Sans', sans-serif;
@@ -215,6 +243,9 @@
     font-weight: 200;
 }
 
+
+/* popper */
+
 :root {
     --popper-theme-background-color: #333333;
     --popper-theme-background-color-hover: #333333;
@@ -225,6 +256,9 @@
     --popper-theme-padding: 10px;
     --popper-theme-box-shadow: 0 6px 30px -6px rgba(0, 0, 0, 0.25);
 }
+
+
+/* responsive for desktop */
 
 @media (min-width: 768px) {
     .container {

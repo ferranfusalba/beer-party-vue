@@ -2,10 +2,6 @@
   <div class="mhHeader"></div>
 </template>
 
-<script>
-export default {
-  name: "Footer",
-};
-</script>
+<script src="@/scripts/footer.js"></script>
 
 <style src="@/styles/style.css"></style>

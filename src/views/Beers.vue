@@ -48,27 +48,6 @@
   </div>
 </template>
 
-<script>
-import HeaderList from "@/components/HeaderList.vue";
-import Tag from "@/components/Tag.vue";
-import Footer from "@/components/Footer.vue";
-
-export default {
-  name: "Beers",
-  components: {
-    HeaderList,
-    Tag,
-    Footer,
-  },
-  data() {
-    return {
-      beerList: [],
-    };
-  },
-  mounted() {
-    this.beerList = this.$store.state.beers;
-  },
-};
-</script>
+<script src="@/scripts/beers.js"></script>
 
 <style src="@/styles/style.css"></style>

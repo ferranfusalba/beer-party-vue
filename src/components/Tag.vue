@@ -4,11 +4,6 @@
   </div>
 </template>
 
-<script>
-export default {
-    name: "Tag",
-    props: ["tagName", "tagStyle", "tagData"]
-}
-</script>
+<script src="@/scripts/tag.js"></script>
 
 <style src="@/styles/style.css"></style>

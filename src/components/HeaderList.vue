@@ -4,10 +4,6 @@
   </nav>
 </template>
 
-<script>
-export default {
-  name: "Header",
-};
-</script>
+<script src="@/scripts/headerList.js"></script>
 
 <style src="@/styles/style.css"></style>

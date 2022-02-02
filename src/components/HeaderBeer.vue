@@ -11,16 +11,6 @@
   </nav>
 </template>
 
-<script>
-import GoBack from "@/components/GoBack.vue";
-
-export default {
-  name: "Header",
-  props: ["beerName"],
-  components: {
-    GoBack,
-  },
-};
-</script>
+<script src="@/scripts/headerBeer.js"></script>
 
 <style src="@/styles/style.css"></style>
