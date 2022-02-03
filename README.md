@@ -11,7 +11,7 @@ First, do a `git clone` of this repo. Then, open the cloned folder on your termi
 ## Navigation
 The app has been designed as mobile-first. Although responsive, the desktop view is quite an adaptation of the mobile version, with the elements stretched and centered.
 
-It has been built with Vue, applying the Vue Router to make this app as SPA. I also installed Bootstrap through npm (no CDN links). The app consists of two views:
+It has been built with Vue 3, applying the Vue Router to make this app as SPA. I also installed Bootstrap through npm (no CDN links). The app consists of two views:
 - The first one, the home, lists all the different 25 beers, each one in a card with some info — name, tagline, thumbnail, and abv & ibu tags.
 - The second view is the beer's details. All the data from the JSON reference has been placed in this view. Elements have been ordered, placed in different Bootstrap components (accordions, cards, tags, lists, sausage menu), and styled with background colors and fonts (downloaded from Google Fonts and installed locally). Also, a popover has been installed (as Bootstrap's original one wasn't functioning well) on the ABV and IBU cards, where they show the definition of those concepts. The second view has the router path `/beer/:id`, where `id` is the id of every object of the JSON (aka, every beer's id).
 
@@ -29,7 +29,13 @@ The visual structure of the app was made with Bootstrap and CSS. Only flexbox, m
 
 Cheers! 🍻
 
+## Colophon
+
 Source of the ABV and IBU information showed on popover: [Shore Craft Beer](https://shorecraftbeer.com/abv-and-ibu-explained/).
+
+Popover component: [npm](https://www.npmjs.com/package/vue3-popper)
+
+Beers API: [PunkAPI](https://api.punkapi.com/v2/beers)
 
 Check the same project, built in Angular: [Github](https://github.com/ferranfusalba/beer-party-angular).
 
