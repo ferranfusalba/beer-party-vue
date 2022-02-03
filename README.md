@@ -31,6 +31,8 @@ Cheers! 🍻
 
 Source of the ABV and IBU information showed on popover: [Shore Craft Beer](https://shorecraftbeer.com/abv-and-ibu-explained/).
 
+Check the same project, built in Angular: [Github](https://github.com/ferranfusalba/beer-party-angular).
+
 
 ---
 ### Original README
