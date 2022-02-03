@@ -1,7 +1,7 @@
 # beer-party-vue
 
 ## Welcome
-Welcome to Deale's Beer Party App! This SPA will guide you through the different 25 beers that will be available at the party. Choose your favorite one and join us!
+Welcome to Deale's Beer Party App! This SPA will guide you through the different beers that will be available at the party. Choose your favorite one and join us!
 
 Okay, but first, let's explain how to execute the app and some details.
 
