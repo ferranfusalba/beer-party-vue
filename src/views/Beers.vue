@@ -6,7 +6,7 @@
       <br>
       Choose your favourite one and join us!
     </div>
-    <h1 class="text-center mb-3 titleBeersPage">List of beers</h1>
+    <h1 class="mb-3 text-center titleBeersPage">List of beers</h1>
     <div v-for="(beer, index) in beerList" :key="index">
       <router-link :to="{ name: 'Beer', params: { id: beer.id } }" class="tdn">
         <div class="card mt-3 cardBeer">

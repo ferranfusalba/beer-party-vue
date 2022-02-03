@@ -1,5 +1,5 @@
 <template>
-  <div class="mhHeader"></div>
+  <footer class="heightFooter"></footer>
 </template>
 
 <script src="@/scripts/footer.js"></script>
