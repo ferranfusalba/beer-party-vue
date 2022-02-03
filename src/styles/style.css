@@ -48,6 +48,7 @@ body {
 
 .bg-malt {
     background-color: rgb(192, 133, 110);
+    border: 1px solid #2a2a2a;
     color: white;
 }
 
@@ -56,14 +57,17 @@ body {
     color: white;
     text-decoration: none;
     border-radius: 10px;
+    padding: 0 6px;
 }
 
 .bg-hops {
     background-color: rgb(190, 255, 174);
+    border: 1px solid #2a2a2a;
 }
 
 .bg-yeast {
     background-color: rgb(253, 239, 158);
+    border: 1px solid #2a2a2a;
 }
 
 .bg-coral {
