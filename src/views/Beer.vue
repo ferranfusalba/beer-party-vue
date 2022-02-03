@@ -62,7 +62,13 @@
         <div class="col-6 border-0 rounded bg-abv">
           <div><b>ABV</b></div>
           <div>{{ beerLocal.abv }}</div>
-          <div><i class="bi bi-info-circle"></i></div>
+          <Popper
+            content="ABV, or alcohol by volume, is the standard measurement, used worldwide, to assess the strength of a particular beer. The higher the ABV, the more alcohol that beer contains."
+          >
+            <button class="btn btn-sm">
+              <i class="bi bi-info-circle"></i>
+            </button>
+          </Popper>
         </div>
       </div>
     </div>
