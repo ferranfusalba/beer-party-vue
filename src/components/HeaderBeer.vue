@@ -1,11 +1,11 @@
 <template>
-  <nav class="fixed-top bg-florinian mhHeader">
+  <nav class="fixed-top bothHeaders">
     <div class="d-flex justify-content-start">
       <div class="plButton">
         <GoBack />
       </div>
       <div class="plButtonText d-flex align-items-center">
-        <h5 class="text-white workSans text-start m-0">{{beerName}}</h5>
+        <h5 class="m-0 text-white text-start workSans">{{beerName}}</h5>
       </div>
     </div>
   </nav>

@@ -1,5 +1,5 @@
 <template>
-  <nav class="fixed-top bg-florinian mhHeader">
+  <nav class="fixed-top bothHeaders">
         <router-link to="/" class="navbar-brand text-white text-center tdn m-0 workSans">Beer Party!</router-link>
   </nav>
 </template>

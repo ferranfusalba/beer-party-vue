@@ -4,7 +4,7 @@
     <!-- Image -->
     <img :src="beerLocal.image_url" alt="" srcset="" class="imgCoverBeer" />
     <!-- Name -->
-    <h1 class="beerName mt-4">{{ beerLocal.name }}</h1>
+    <h1 class="mt-4 beerName">{{ beerLocal.name }}</h1>
     <!-- ID Tag -->
     <div class="d-flex flex-row justify-content-center">
       <Tag
@@ -22,13 +22,13 @@
     </div>
     <!-- Three data types -->
     <div v-if="beerLocal.ibu != null">
-      <div class="row mt-2 marginsContainer workSans">
-        <div class="col-4 border-0 rounded bg-coral">
+      <div class="row marginsContainer workSans">
+        <div class="col-4 threeDataTypeTag bg-coral">
           <div><i class="bi bi-calendar-check"></i></div>
           <div><b>First brewed</b></div>
           <div>{{ beerLocal.first_brewed }}</div>
         </div>
-        <div class="col-4 border-0 rounded bg-abv">
+        <div class="col-4 threeDataTypeTag bg-abv">
           <div><b>ABV</b></div>
           <div>{{ beerLocal.abv }}</div>
           <Popper
@@ -39,7 +39,7 @@
             </button>
           </Popper>
         </div>
-        <div class="col-4 border-0 rounded bg-ibu">
+        <div class="col-4 threeDataTypeTag bg-ibu">
           <div><b>IBU</b></div>
           <div>{{ beerLocal.ibu }}</div>
           <Popper
@@ -53,13 +53,13 @@
       </div>
     </div>
     <div v-else-if="beerLocal.ibu == null">
-      <div class="row mt-2 marginsContainer workSans">
-        <div class="col-6 border-0 rounded bg-coral">
+      <div class="row marginsContainer workSans">
+        <div class="col-6 threeDataTypeTag bg-coral">
           <div><i class="bi bi-calendar-check"></i></div>
           <div><b>First brewed</b></div>
           <div>{{ beerLocal.first_brewed }}</div>
         </div>
-        <div class="col-6 border-0 rounded bg-abv">
+        <div class="col-6 threeDataTypeTag bg-abv">
           <div><b>ABV</b></div>
           <div>{{ beerLocal.abv }}</div>
           <Popper
@@ -153,7 +153,7 @@
       <!-- Twist, only shown if does not return null -->
       <div v-if="beerLocal.method.twist == null"></div>
       <div v-else-if="beerLocal.method.twist != null">
-        <div class="workSans mt-2 border-0 bg-twist">
+        <div class="mt-2 border-0 workSans bg-twist">
           twist: {{ beerLocal.method.twist }}
         </div>
       </div>
@@ -161,7 +161,7 @@
     <!-- Ingredients -->
     <div class="mt-4">
       <h4 class="workSansB">Ingredients</h4>
-      <h5 class="workSansL mt-3 mb-3 bg-malt">Malt</h5>
+      <h5 class="mt-3 mb-3 workSansL bg-malt ingrTitle">Malt</h5>
       <div
         v-for="maltObject in beerLocal.ingredients.malt"
         :key="maltObject"
@@ -176,7 +176,7 @@
           </div>
         </div>
       </div>
-      <h5 class="workSansL mt-3 mb-3 bg-hops">Hops</h5>
+      <h5 class="mt-3 mb-3 workSansL bg-hops ingrTitle">Hops</h5>
       <div
         v-for="hopsObject in beerLocal.ingredients.hops"
         :key="hopsObject"
@@ -195,23 +195,22 @@
           </div>
         </div>
       </div>
-      <h5 class="workSansL mt-3 mb-3 bg-yeast">Yeast</h5>
+      <h5 class="mt-3 mb-3 workSansL bg-yeast ingrTitle">Yeast</h5>
       <div class="text-center workSans">
         {{ beerLocal.ingredients.yeast }}
       </div>
     </div>
     <!-- Food pairing -->
     <div class="mt-2">
-      <h5 class="workSansB mt-4 mb-4">Food pairing</h5>
+      <h5 class="mt-4 mb-4 workSansB">Food pairing</h5>
       <!-- Card carousel -->
       <div
-        class="row flex-row flex-nowrap marginsContainer"
-        style="overflow-x: auto"
+        class="row flex-row flex-nowrap marginsContainer cardFood0"
       >
         <div
           v-for="item in beerLocal.food_pairing"
           :key="item"
-          class="card cardFood mb-3 mr-3"
+          class="card mb-3 mr-3 cardFood"
         >
           <img
             class="card-img-top"
@@ -225,8 +224,8 @@
       </div>
     </div>
     <!-- Brewers tips -->
-    <div class="mt-2 mb-4">
-      <h5 class="workSansB mt-4 mb-4">Brewers tips</h5>
+    <div class="mt-2 mb-4 marginsContainer">
+      <h5 class="mt-4 mb-4 workSansB">Brewers tips</h5>
       <div class="row">
         <div class="col-2">
           <i class="bi bi-person-circle"></i>
