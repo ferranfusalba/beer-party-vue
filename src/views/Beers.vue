@@ -21,7 +21,7 @@
             <div class="col-10">
               <div class="card-body">
                 <h5 class="card-title beerName">{{ beer.name }}</h5>
-                <p class="card-text beerTagline">
+                <p class="card-text beerTaglineIntro">
                   {{ beer.tagline }}
                 </p>
                 <div class="d-flex flex-row justify-content-center">

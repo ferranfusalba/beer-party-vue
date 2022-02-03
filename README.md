@@ -8,12 +8,12 @@ Okay, but first, let's explain how to execute the app and some details.
 ## Install
 First, do a `git clone` of this repo. Then, open the cloned folder on your terminal and run `npm install`. Wait a few seconds until it finishes. Next, run `npm run serve` and open your browser on `localhost:8080`. Alternatively, you can visit `beer-party-vue.vercel.app`, but that's not the point.
 
-## Design and navigation
+## Navigation
 The app has been designed as mobile-first. Although responsive, the desktop view is quite an adaptation of the mobile version, with the elements stretched and centered.
 
 It has been built with Vue, applying the Vue Router to make this app as SPA. I also installed Bootstrap through npm (no CDN links). The app consists of two views:
 - The first one, the home, lists all the different 25 beers, each one in a card with some info — name, tagline, thumbnail, and abv & ibu tags.
-- The second view is the beer's details. All the data from the JSON reference has been placed in this view. Elements have been ordered, placed in different components (accordions, cards, tags, lists, sausage menu), and styled with background colors and fonts, downloaded from Google Fonts, and installed locally. Also, a popover has been installed (as Bootstrap's original one wasn't functioning well) on the ABV and IBU cards, where they show the definition of those concepts. The second view has the router path `/beer/:id`, where `id` is the id of every object of the JSON (aka, every beer's id).
+- The second view is the beer's details. All the data from the JSON reference has been placed in this view. Elements have been ordered, placed in different Bootstrap components (accordions, cards, tags, lists, sausage menu), and styled with background colors and fonts (downloaded from Google Fonts and installed locally). Also, a popover has been installed (as Bootstrap's original one wasn't functioning well) on the ABV and IBU cards, where they show the definition of those concepts. The second view has the router path `/beer/:id`, where `id` is the id of every object of the JSON (aka, every beer's id).
 
 ## Fetching data from API
 I used Vuex Store (`src/store/index.js`) to manage the data. I created a `beers` array in the state, filled with the data from the API website through an `async function` (although I initially did it on axios).
@@ -28,6 +28,8 @@ Components have also been applied to optimize code that repeats the same structu
 The visual structure of the app was made with Bootstrap and CSS. Only flexbox, margins, rows-columns and component structure (cards, accordion) have been declared in the classes of the html files (vue's `template`). The CSS stylesheet serves the local fonts, colors, borders, text-aligns, images behavior, etc.
 
 Cheers! 🍻
+
+Source of the ABV and IBU information showed on popover: [Shore Craft Beer](https://shorecraftbeer.com/abv-and-ibu-explained/).
 
 
 ---
